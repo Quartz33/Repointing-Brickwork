@@ -5,10 +5,10 @@ import { ChevronRight } from "lucide-react"
 
 export default function Hero() {
     return (
-        <div className="relative w-full bg-main overflow-hidden mx-auto pt-4">
+        <div className="relative w-full bg-main overflow-hidden mx-auto pt-6">
             <h4 className="text-off-red text-center text-sm">Bricklaying Contractors you can count on</h4>
-            <h1 className="font-staatliches  text-black text-center pt-2 text-4xl">REPOINTING BRICKWORK</h1>
-            <p className="text-center text-black tracking-wide pt-6 text-lg font-light px-4">We specialise in quality brickwork, repointing, and repairs — built to last, and finished with care. Serving homes and businesses with a no-nonsense, honest approach to masonry.</p>
+            <h1 className="font-staatliches  text-black text-center pt-1 text-4xl">REPOINTING BRICKWORK</h1>
+            <p className="text-center text-black tracking-wide pt-4 text-lg font-light px-4 font-inter">We specialise in quality brickwork, repointing, and repairs — built to last, and finished with care. Serving homes and businesses with a no-nonsense, honest approach to masonry.</p>
             <Image
                 alt="work"
                 src="/brick-hero.jpg"

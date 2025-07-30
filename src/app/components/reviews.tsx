@@ -3,7 +3,7 @@ import { StarIcon } from '@heroicons/react/20/solid'
 
 export default function Reviews() {
     return (
-        <div className="flex items-center gap-6 bg-transparent pt-8">
+        <div className="flex items-center gap-6 bg-transparent pt-8 ">
             {/* Profile avatars */}
             <div className="flex -space-x-3 md:-space-x-4">
                 {[
@@ -32,8 +32,8 @@ export default function Reviews() {
                         <StarIcon key={i} className="w-5 h-5 md:w-6 md:h-6" />
                     ))}
                 </div>
-                <span className="text-black text-sm md:text-base font-poppins whitespace-nowrap mt-1 font-semibold">
-                    Loved by 50+ customers
+                <span className="text-black text-sm md:text-base font-poppins whitespace-nowrap mt-1 font-light font-barlow">
+                    Loved by 300+ customers
                 </span>
             </div>
         </div>

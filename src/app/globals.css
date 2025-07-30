@@ -25,6 +25,9 @@
 .font-staatliches {
   font-family: var(--font-staatliches), sans-serif;
 }
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+}
 
 .bg-main
 {

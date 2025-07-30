@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow, Staatliches } from "next/font/google";
+import { Barlow, Staatliches, Inter } from "next/font/google";
 import "./globals.css";
 
 
@@ -12,6 +12,10 @@ const staatliches = Staatliches({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-staatliches"
+});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
@@ -27,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlow.className} ${staatliches.variable} antialiased`}>
+        className={`${barlow.className} ${staatliches.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>
