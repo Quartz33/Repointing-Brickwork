@@ -41,12 +41,12 @@ export default function Hero() {
                     <br />
                     <a className="text-black">Customer Satisfaction</a>
                 </div>
-                <div className="bg-box rounded-l-md text-off-red ">
+                <div className="bg-box rounded-r-md text-off-red ">
                     <a className="text-3xl">300+</a>
                     <br />
                     <a className="text-black">Projects Completed</a>
                 </div>
-                <div className="bg-box rounded-l-md text-off-red ">
+                <div className="bg-box rounded-r-md text-off-red ">
                     <a className="text-3xl">25+</a>
                     <br />
                     <a className="text-black">Years of Experience</a>
