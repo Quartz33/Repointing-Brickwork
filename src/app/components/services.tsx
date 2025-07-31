@@ -15,7 +15,7 @@ export function Map() {
 
   return (
     <div className="relative">
-      <div className={`w-full h-full pt-20 transition-all duration-300 : ''}`}>
+      <div className={`w-full h-full pt-20 transition-all duration-300: ''}`}>
         <h1 className='text-black font-staat text-4xl text-center'>Our Services</h1>
         <Carousel items={cards} />
       </div>
@@ -201,12 +201,7 @@ export default function Services() {
         </div>
       </div>
 
-      <Map />
-      <div className="">
-        <button className="btn btn-outline text-black border-black bg-white hover:bg-[#d3d3d3] transition-colors duration-300">
-          View all our services
-        </button>
-      </div>
+      <Map/>
     </div>
   );
 }

@@ -134,6 +134,9 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           </div>
         </div>
         <div className="mr-10 flex justify-end gap-2">
+          <button className="btn btn-outline text-black border-black bg-white hover:bg-[#d3d3d3] transition-colors duration-300 mr-8">
+            View all our services
+          </button>
           <button
             className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full border-1 border-gray-600/50 disabled:opacity-50"
             onClick={scrollLeft}
@@ -260,7 +263,7 @@ export const Card = ({
         <BlurImage
           src={card.src}
           alt={card.title}
-          
+
           className="absolute inset-0 z-10 object-cover"
         />
       </motion.button>

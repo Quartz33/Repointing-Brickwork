@@ -87,19 +87,23 @@ export default function Header() {
                 >
                   <Popover.Panel className="absolute z-10 mt-3 w-screen max-w-md overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-200">
                     <div className="p-4">
-                      {products.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="flex items-start gap-4 rounded-lg p-3 hover:bg-gray-50 transition"
-                        >
-                          <item.icon className="h-6 w-6 text-red-600" />
-                          <div>
-                            <p className="text-sm font-semibold text-gray-900">{item.name}</p>
-                            <p className="text-sm text-gray-600">{item.description}</p>
-                          </div>
-                        </a>
-                      ))}
+                      {products.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-start gap-4 rounded-lg p-3 hover:bg-gray-50 transition"
+                          >
+                            const Icon = item.icon;
+                            <Icon className="h-6 w-6 text-red-600" />
+                            <div>
+                              <p className="text-sm font-semibold text-gray-900">{item.name}</p>
+                              <p className="text-sm text-gray-600">{item.description}</p>
+                            </div>
+                          </a>
+                        );
+                      })}
                     </div>
                   </Popover.Panel>
                 </Transition>
