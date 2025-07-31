@@ -19,7 +19,9 @@ import {
   PlayCircleIcon,
   PhoneIcon,
   RectangleGroupIcon,
+  AtSymbolIcon,
 } from '@heroicons/react/24/outline';
+import { FacebookIcon, InstagramIcon } from 'lucide-react';
 
 const products = [
   { name: 'Repointing', description: 'Understand your walls', href: '#', icon: ChartPieIcon },
@@ -40,6 +42,28 @@ export default function Header() {
 
   return (
     <header className="relative z-10 bg-white">
+      {/* Top bar - visible on large screens */}
+      <div className="hidden lg:block bg-[#B72025] text-white py-2">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <PhoneIcon className="w-4 h-4" />
+              <span>07841582767</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <AtSymbolIcon className="w-4 h-4" />
+              <span>Repointingbrickwork@gmail.com</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <FacebookIcon className="w-5 h-5" />
+            {/* Removed invalid XIcon */}
+            <InstagramIcon className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
@@ -60,20 +84,23 @@ export default function Header() {
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="inline-flex items-center justify-center rounded-md p-2 text-gray-700"
+            aria-label="Open menu"
           >
             <Bars3Icon className="h-6 w-6 text-red-700" />
-            <span className="sr-only">Open menu</span>
           </button>
         </div>
 
         {/* Desktop Navigation */}
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="hidden lg:flex lg:gap-x-6 items-center">
           <Popover className="relative">
             {({ open }: { open: boolean }) => (
               <>
                 <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                   Services
-                  <ChevronDownIcon className={`h-5 w-5 transition-transform ${open ? 'rotate-180' : ''}`} />
+                  <ChevronDownIcon
+                    className={`h-4 w-4 transition-transform mt-1 ${open ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                  />
                 </Popover.Button>
 
                 <Transition
@@ -95,8 +122,7 @@ export default function Header() {
                             href={item.href}
                             className="flex items-start gap-4 rounded-lg p-3 hover:bg-gray-50 transition"
                           >
-                            const Icon = item.icon;
-                            <Icon className="h-6 w-6 text-red-600" />
+                            <Icon className="h-6 w-6 text-red-600" aria-hidden="true" />
                             <div>
                               <p className="text-sm font-semibold text-gray-900">{item.name}</p>
                               <p className="text-sm text-gray-600">{item.description}</p>
@@ -111,9 +137,14 @@ export default function Header() {
             )}
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Projects</a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Portfolio</a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Contact</a>
+          <a href="#" className="text-md font-semibold leading-6 text-gray-900">Projects</a>
+          <a href="#" className="text-md font-semibold leading-6 text-gray-900">Portfolio</a>
+          <a
+            href="#"
+            className="inline-flex items-center px-4 py-1 text-lg  font-bold uppercase tracking-widest text-white bg-[#B72025] rounded-lg hover:bg-[#a51e20] transition-colors duration-300 whitespace-nowrap"
+          >
+            Contact
+          </a>
         </Popover.Group>
       </nav>
 
@@ -139,9 +170,9 @@ export default function Header() {
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-md p-2 text-gray-700 hover:text-red-600"
+                aria-label="Close menu"
               >
                 <XMarkIcon className="h-6 w-6" />
-                <span className="sr-only">Close menu</span>
               </button>
             </div>
 
@@ -154,6 +185,7 @@ export default function Header() {
                       Services
                       <ChevronDownIcon
                         className={`h-5 w-5 transition-transform ${open ? 'rotate-180' : ''}`}
+                        aria-hidden="true"
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="mt-2 space-y-1">

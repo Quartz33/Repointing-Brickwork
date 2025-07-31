@@ -3,7 +3,7 @@ import { StarIcon } from '@heroicons/react/20/solid'
 
 export default function Reviews() {
     return (
-        <div className="flex items-center gap-6 bg-transparent pt-8 ">
+        <div className="flex items-center gap-6 bg-transparent pt-8">
             {/* Profile avatars */}
             <div className="flex -space-x-3 md:-space-x-4">
                 {[

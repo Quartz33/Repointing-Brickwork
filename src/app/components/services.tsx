@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 export function Map() {
-  
+
 
   const cards = data.map((card, index) => (
     <Card key={index} card={card} index={index} />
@@ -174,34 +174,40 @@ const data = [
     content: <OtherServicesInfo />,
   },
 ];
-
 export default function Services() {
   return (
-    <div className="bg-[#FAF9F6] py-12 px-4">
-      {/* Contact Section */}
-      <div className="flex flex-col md:flex-row items-center gap-6 max-w-5xl w-full mx-auto justify-center">
-        {/* Icon Circle */}
-        <div className="w-20 h-20 rounded-full border border-gray-600 flex items-center justify-center shrink-0">
-          <MessagesSquare className="text-red-600 w-8 h-8" />
-        </div>
+    <>
+      {/* White Section: Get in Touch */}
+      <div className="w-full bg-white py-12 px-4">
+        <div className="flex flex-col md:flex-row items-center gap-6 max-w-5xl w-full mx-auto justify-center  pb-4">
+          {/* Icon Circle */}
+          <div className="w-20 h-20 rounded-full border border-gray-600 flex items-center justify-center shrink-0">
+            <MessagesSquare className="text-red-600 w-8 h-8" />
+          </div>
 
-        {/* Text Content */}
-        <div className="text-center md:text-left md:flex-1 text-black">
-          <h2 className="text-lg font-bold uppercase">Free Quotations</h2>
-          <p className="text-sm mt-1">
-            Get in touch with us today for a free & quick quotation on your next brickwork project
-          </p>
-        </div>
+          {/* Text Content */}
+          <div className="text-center md:text-left md:flex-1 text-black">
+            <h2 className="text-lg font-bold uppercase">Free Quotations</h2>
+            <p className="text-sm mt-1">
+              Get in touch with us today for a free & quick quotation on your next brickwork project
+            </p>
+          </div>
 
-        {/* Button */}
-        <div className="mt-4 md:mt-0">
-          <button className="bg-[#B72025] hover:bg-red-700 text-white font-semibold rounded-md px-6 py-3 shadow-md transition">
-            CONTACT US
-          </button>
+          {/* Button */}
+          <div className="mt-4 md:mt-0">
+            <button className="bg-[#B72025] hover:bg-red-700 text-white font-semibold rounded-md px-6 py-3 shadow-md transition">
+              CONTACT US
+            </button>
+          </div>
         </div>
       </div>
 
-      <Map/>
-    </div>
+      {/* Dark Section: Map */}
+      <div className="w-full bg-main">
+        <Map />
+      </div>
+    </>
   );
 }
+
+
