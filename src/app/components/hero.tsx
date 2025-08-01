@@ -9,7 +9,7 @@ export default function Hero() {
 
                 {/* Left Content */}
                 <div className="lg:w-1/2 w-full text-center">
-                    <h4 className="text-off-red text-sm lg:pt-10">Bricklaying Contractors you can count on</h4>
+                    <h4 className="text-off-red text-sm lg:pt-10 lg:text-lg">Bricklaying Contractors you can count on</h4>
                     <h1 className="font-staatliches text-black  pt-1 text-4xl lg:text-6xl">REPOINTING BRICKWORK</h1>
                     <p className="text-black tracking-wide pt-4 text-base lg:text-1xl font-light font-inter">
                         We specialise in quality brickwork, repointing, and repairs — built to last, and finished with care. Serving homes and businesses with a no-nonsense, honest approach to masonry.
@@ -19,7 +19,7 @@ export default function Hero() {
                         <button className="w-full sm:w-auto text-white lg:text-3xl uppercase tracking-widest font-bold font-barlow bg-[#B72025] py-3 px-6 rounded-lg hover:bg-[#a51e20] transition-colors duration-300">
                             GET IN TOUCH TODAY
                         </button>
-                        <button className="lg:text-1xl btn btn-outline text-black border-black bg-white hover:bg-gray-300 transition-colors duration-300">
+                        <button className="lg:text-1xl lg:mt-12 btn btn-outline text-black border-black bg-white hover:bg-gray-300 transition-colors duration-300">
                             VIEW OUR WORK <ChevronRight className="w-4 ml-1" />
                         </button>
                     </div>
@@ -30,13 +30,13 @@ export default function Hero() {
                 </div>
 
                 {/* Right Image */}
-                <div className="w-full lg:w-1/2 lg:ml-20 flex items-center justify-center">
+                <div className="lg:w-1/2 lg:ml-20 flex items-center justify-center">
                     <Image
                         alt="work"
                         src="/brick-hero.jpg"
                         width={1000}
                         height={600}
-                        className="rounded-lg object-cover w-full sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px]"
+                        className="rounded-lg object-cover w-full sm:w-[500px] md:w-[600px] lg:w-[1200px] xl:w-[1200px]"
                     />
                 </div>
             </div>
