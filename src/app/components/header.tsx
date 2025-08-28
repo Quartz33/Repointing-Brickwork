@@ -52,7 +52,7 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-2">
               <AtSymbolIcon className="w-4 h-4" />
-              <span>Repointingbrickwork@gmail.com</span>
+              <span>repointingbrickwork.iow@gmail.com</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
