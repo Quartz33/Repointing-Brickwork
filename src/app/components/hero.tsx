@@ -15,11 +15,13 @@ export default function Hero() {
                         We specialise in quality brickwork, repointing, and repairs — built to last, and finished with care. Serving homes and businesses with a no-nonsense, honest approach to masonry.
                     </p>
 
-                    <div className="flex flex-col items-center justify-center gap-4 pt-15">
+                    <div className="flex flex-col items-center justify-center gap-4 pt-16">
+                        <a href="#contactus">
                         <button className="w-full sm:w-auto text-white lg:text-3xl uppercase tracking-widest font-bold font-barlow bg-[#B72025] py-3 px-6 rounded-lg hover:bg-[#a51e20] transition-colors duration-300">
                             GET IN TOUCH TODAY
                         </button>
-                        <button className="lg:text-1xl lg:mt-12 btn btn-outline text-black border-black bg-white hover:bg-gray-300 transition-colors duration-300">
+                        </a>
+                        <button className="lg:text-1xl lg:mt-8 btn btn-outline text-black border-black bg-white hover:bg-gray-300 transition-colors duration-300">
                             VIEW OUR WORK <ChevronRight className="w-4 ml-1" />
                         </button>
                     </div>

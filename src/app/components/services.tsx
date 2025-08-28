@@ -195,9 +195,11 @@ export default function Services() {
 
           {/* Button */}
           <div className="mt-4 md:mt-0">
+            <a href='#contactus'>
             <button className="bg-[#B72025] hover:bg-red-700 text-white font-semibold rounded-md px-6 py-3 shadow-md transition">
               CONTACT US
             </button>
+            </a>
           </div>
         </div>
       </div>
