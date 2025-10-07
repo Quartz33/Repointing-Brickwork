@@ -84,7 +84,7 @@ export default function OtherServices() {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <p className="text-gray-600 text-lg mb-6">
-            Need a custom solution? We're here to help with any construction project.
+            Need a custom solution? We are here to help with any construction project.
           </p>
           <button className="inline-flex items-center px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
             Get a Free Quote

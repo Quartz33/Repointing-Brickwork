@@ -134,7 +134,6 @@ export default function Header() {
           </Popover>
 
           <a href="#" className="text-md font-semibold leading-6 text-gray-900">Projects</a>
-          <a href="#" className="text-md font-semibold leading-6 text-gray-900">Portfolio</a>
           <a
             href="#contactus"
             className="inline-flex items-center px-4 py-1 text-lg  font-bold uppercase tracking-widest text-white bg-[#B72025] rounded-lg hover:bg-[#a51e20] transition-colors duration-300 whitespace-nowrap"
