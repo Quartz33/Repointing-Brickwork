@@ -11,7 +11,7 @@ import {
 } from '@headlessui/react';
 import {
   Bars3Icon,
-  ChartPieIcon,
+
   CursorArrowRaysIcon,
   FingerPrintIcon,
   SquaresPlusIcon,
@@ -22,20 +22,15 @@ import {
   RectangleGroupIcon,
   AtSymbolIcon,
 } from '@heroicons/react/24/outline';
-import { FacebookIcon, InstagramIcon } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, ArrowBigRight, Cuboid, Pickaxe, BrickWall, Ellipsis } from 'lucide-react';
+import { ellipse } from 'motion/react-client';
 
 const products = [
-  { name: 'Repointing', description: 'Understand your walls', href: '/services/repointing', icon: ChartPieIcon },
-  { name: 'Brickwork', description: 'We lay it right', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Stonework', description: 'Craftsmanship in stone', href: '#', icon: FingerPrintIcon },
-  { name: 'Cavity Works', description: 'Protective layering', href: '#', icon: SquaresPlusIcon },
-  { name: 'Other Services', description: 'More than just bricks', href: '#', icon: SquaresPlusIcon },
-];
-
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-  { name: 'Services', href: '#', icon: RectangleGroupIcon },
+  { name: 'Repointing', description: 'Understand your walls', href: '/services/repointing', icon: ArrowBigRight },
+  { name: 'Brickwork', description: 'We lay it right', href: '/services/bricklaying', icon: Cuboid },
+  { name: 'Stonework', description: 'Craftsmanship in stone', href: '/services/stonework', icon: Pickaxe },
+  { name: 'Cavity Works', description: 'Protective layering', href: '/services/cavity-walls', icon: BrickWall },
+  { name: 'Other Services', description: 'More than just bricks', href: '/services/other-services', icon: Ellipsis },
 ];
 
 export default function Header() {
@@ -190,7 +185,7 @@ export default function Header() {
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="mt-2 space-y-1">
-                      {[...products, ...callsToAction].map((item) => (
+                      {[...products].map((item) => (
                         <a
                           key={item.name}
                           href={item.href}

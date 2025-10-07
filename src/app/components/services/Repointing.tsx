@@ -21,7 +21,7 @@ export default function Repointing() {
       <div className="max-w-6xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="relative w-full h-[400px] lg:h-[500px]">
           <Image
-            src="/repointing-work.jpg"
+            src="/repointing.jpg"
             alt="Professional brick repointing service"
             fill
             className="object-cover rounded-lg shadow-lg"
@@ -29,7 +29,7 @@ export default function Repointing() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="font-staatliches text-3xl lg:text-4xl">
+          <h2 className="font-staatliches text-4xl lg:text-5xl">
             What Is Repointing?
           </h2>
           <p className="font-inter text-base lg:text-lg font-light leading-relaxed">
@@ -41,7 +41,7 @@ export default function Repointing() {
             <li>Enhances property value and kerb appeal</li>
             <li>Available for both modern and heritage buildings</li>
           </ul>
-          <a href="#contactus">
+          <a href="/contact-us">
             <button className="mt-6 inline-flex items-center bg-[#B72025] text-white py-3 px-6 rounded-lg font-barlow uppercase tracking-widest font-bold hover:bg-[#a51e20] transition-colors duration-300">
               Get a Free Quote <ChevronRight className="ml-2 w-5 h-5" />
             </button>
@@ -57,23 +57,23 @@ export default function Repointing() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative h-[350px]">
             <Image
-              src="/before-repointing.jpg"
+              src="/repointing-before.jpg"
               alt="Before repointing"
               fill
               className="object-cover rounded-lg shadow-md"
             />
-            <p className="absolute bottom-3 left-3 bg-black bg-opacity-70 text-white px-3 py-1 rounded-md text-sm uppercase tracking-wide">
+            <p className="absolute bottom-3 left-3 bg-[#B72025] bg-opacity-70 text-white px-3 py-1 rounded-md text-sm uppercase tracking-wide">
               Before
             </p>
           </div>
           <div className="relative h-[350px]">
             <Image
-              src="/after-repointing.jpg"
+              src="/repointing-after.jpg"
               alt="After repointing"
               fill
               className="object-cover rounded-lg shadow-md"
             />
-            <p className="absolute bottom-3 left-3 bg-black bg-opacity-70 text-white px-3 py-1 rounded-md text-sm uppercase tracking-wide">
+            <p className="absolute bottom-3 left-3 bg-[#B72025] bg-opacity-70 text-white px-3 py-1 rounded-md text-sm uppercase tracking-wide">
               After
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function Repointing() {
         <p className="font-inter text-lg font-light max-w-2xl mx-auto mb-8">
           Get in touch today to arrange a free inspection and no-obligation quote. We’ll assess your property and recommend the best repointing solution for long-lasting results.
         </p>
-        <a href="#contactus">
+        <a href="/contact-us">
           <button className="bg-[#B72025] text-white py-3 px-8 rounded-lg font-barlow uppercase tracking-widest font-bold hover:bg-[#a51e20] transition-colors duration-300">
             Contact Us Today
           </button>
