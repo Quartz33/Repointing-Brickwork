@@ -2,6 +2,7 @@
 
 import { useState, Fragment } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Dialog,
   Disclosure,
@@ -24,7 +25,7 @@ import {
 import { FacebookIcon, InstagramIcon } from 'lucide-react';
 
 const products = [
-  { name: 'Repointing', description: 'Understand your walls', href: '#', icon: ChartPieIcon },
+  { name: 'Repointing', description: 'Understand your walls', href: '/services/repointing', icon: ChartPieIcon },
   { name: 'Brickwork', description: 'We lay it right', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Stonework', description: 'Craftsmanship in stone', href: '#', icon: FingerPrintIcon },
   { name: 'Cavity Works', description: 'Protective layering', href: '#', icon: SquaresPlusIcon },
@@ -67,7 +68,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Repointing Brickwork</span>
             <Image
               src="/logo.jpeg"
@@ -76,7 +77,7 @@ export default function Header() {
               height={48}
               className="h-12 w-auto object-contain"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -158,7 +159,7 @@ export default function Header() {
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white p-6 overflow-y-auto">
             {/* Header */}
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <Image
                   src="/logo.jpeg"
                   alt="Logo"
@@ -166,7 +167,7 @@ export default function Header() {
                   height={48}
                   className="h-12 w-auto object-contain"
                 />
-              </a>
+              </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-md p-2 text-gray-700 hover:text-red-600"

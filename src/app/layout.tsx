@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow, Staatliches, Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./components/header";
 
 
 const barlow = Barlow({
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${barlow.className} ${staatliches.variable} ${inter.variable} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>
