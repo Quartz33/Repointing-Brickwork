@@ -67,9 +67,9 @@ export default function Header() {
             <span className="sr-only">Repointing Brickwork</span>
             <Image
               src="/logo.jpeg"
-              alt="Repointing Brickwork Logo"
-              width={48}
-              height={48}
+              alt="Logo"
+              width={144}
+              height={144}
               className="h-12 w-auto object-contain"
             />
           </Link>
