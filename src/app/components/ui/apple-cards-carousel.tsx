@@ -27,6 +27,7 @@ type Card = {
   title: string;
   category: string;
   content: React.ReactNode;
+  description: string;
 };
 
 export const CarouselContext = createContext<{
@@ -240,30 +241,40 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900 shadow-lg transition-all duration-500 hover:shadow-2xl"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        <div className="relative z-40 p-8">
+        {/* Gradient overlay */}
+        <div className="pointer-events-none absolute inset-0 z-30 h-full rounded-3xl bg-gradient-to-b from-black/20 via-black/70 to-black/20 transition-all duration-500 hover:from-black/50 hover:via-black/70 hover:to-black/50" />
+
+        <div className="relative z-40 p-8 flex flex-col justify-center h-full">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
             className="text-left font-sans text-sm font-medium text-white md:text-base"
           >
             {card.category}
           </motion.p>
+
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
             className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
           >
             {card.title}
           </motion.p>
+
+          <motion.p className="mt-4 text-left text-white text-sm md:text-base font-inter max-w-xs">
+            {card.description || "This is a placeholder description for the card."}
+          </motion.p>
         </div>
+
         <BlurImage
           src={card.src}
           alt={card.title}
-
-          className="absolute inset-0 z-10 object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-3xl transition-transform duration-500 hover:scale-105"
         />
       </motion.button>
+
     </>
 
   );

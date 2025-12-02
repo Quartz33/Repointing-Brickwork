@@ -16,7 +16,7 @@ export function Map() {
   return (
     <div className="relative">
       <div className={`w-full h-full pt-20 transition-all duration-300: ''}`}>
-        <h1 className='text-black font-staat text-4xl text-center'>Our Services</h1>
+        <h1 className='text-black font-staat text-4xl text-center lg:text-6xl'>Our Services</h1>
         <Carousel items={cards} />
       </div>
     </div>
@@ -24,7 +24,7 @@ export function Map() {
 }
 
 
-const ExtensionsInfo = () => {
+const Repointing = () => {
   return (
     <section className="bg-main px-6 py-10 md:px-14 md:py-16 rounded-3xl max-w-4xl mx-auto mt-12 shadow-md">
       <h2 className="text-2xl md:text-3xl font-staatliches text-[#8B0000] text-center mb-4 tracking-wider">
@@ -118,7 +118,7 @@ const StoneworkInfo = () => {
 const OtherServicesInfo = () => {
   return (
     <section className="bg-main px-6 py-10 md:px-14 md:py-16 rounded-3xl max-w-4xl mx-auto mt-12 shadow-md">
-      <h2 className="text-2xl md:text-3xl font-staatliches text-[#8B0000] text-center mb-4 tracking-wider">
+      <h2 className="text-2xl md:text-3xl font-staatliches text-[#8B0000] text-center mb-4 tracking-wider ">
         Other Services
       </h2>
       <p className="text-neutral-800 text-base md:text-lg font-inter leading-relaxed text-center">
@@ -132,48 +132,51 @@ const OtherServicesInfo = () => {
 };
 const data = [
   {
-    category: "Extensions",
-    title: "Expertly built brick extensions that blend seamlessly with your home, adding space and value.",
-    src: "/img1.jpg",
-    content: <ExtensionsInfo />,
-  },
-  {
-    category: "Ground Work",
-    title: "Relax and restore with expert therapeutic touch.",
-    src: "/img2.jpg",
-    content: < GroundWorkInfo />,
+    category: "Repointing",
+    title: "Brickwork Repointing",
+    description: "Dust-controlled grinding, scaffolding supply, and lime specialists offering traditional applications. Expert work on both stone and brickwork, delivering quality craftsmanship on every project.",
+    src: "/repointing-service.jpg",
+    content: <Repointing />,
   },
   {
     category: "Lintel Replacement",
-    title: "Boost your glow from the inside out.",
-    src: "/img3.png",
-    content: <LintelReplacementInfo />,
+    title: "Professional Lintel Replacement",
+    description: "Extensive experience across a wide range of projects. Fully insured specialists in replacing failed arches and performing expert crack repairs.",
+    src: "/lintel-replacement.jpg",
+    content: <GroundWorkInfo />,
   },
   {
-    category: "Repointing",
-    title: "Enhance natural volume and smooth fine lines.",
-    src: "/img4.png",
-    content: <RepointingInfo />,
-  },
-  {
-    category: "Cavity Work",
-    title: "Curated treatment bundles for ultimate self-care.",
-    src: "/img5.jpg",
+    category: "Cavity Tray Installation",
+    title: "Expert Cavity Tray Installation",
+    description: "Protect your property from damp and water ingress with professionally installed cavity trays, using high-quality materials and precise workmanship.",
+    src: "/cavitywall-2.png",
     content: <CavityWorkInfo />,
+
+  },
+  {
+    category: "Extensions",
+    title: "Professional Home Extensions",
+    description: "Our team delivers expertly crafted workmanship backed by over 25 years of experience and full insurance coverage. We handle all aspects of external building, including groundwork, drainage, and more, ensuring quality and reliability on every project.",
+    src: "/Extension-service.jpg",
+    content: <LintelReplacementInfo />,
+
   },
   {
     category: "Stonework",
-    title: "A quick escape to reset and unwind.",
-    src: "/img1.jpg",
+    title: "Skilled Stonework",
+    description: "From decorative features to structural walls, our stonework combines craftsmanship with durability for timeless results.",
+    src: "/stonework-service.jpg",
     content: <StoneworkInfo />,
   },
   {
     category: "Other Services",
-    title: "Softens lines for a youthful, refreshed look.",
+    title: "Additional Masonry Services",
+    description: "We offer a full range of masonry and bricklaying services, tailored to your project requirements, from repairs to custom builds.",
     src: "/img1.jpg",
     content: <OtherServicesInfo />,
   },
 ];
+
 export default function Services() {
   return (
     <>
@@ -196,9 +199,9 @@ export default function Services() {
           {/* Button */}
           <div className="mt-4 md:mt-0">
             <a href='#contactus'>
-            <button className="bg-[#B72025] hover:bg-red-700 text-white font-semibold rounded-md px-6 py-3 shadow-md transition">
-              CONTACT US
-            </button>
+              <button className="bg-[#B72025] hover:bg-red-700 text-white font-semibold rounded-md px-6 py-3 shadow-md transition">
+                CONTACT US
+              </button>
             </a>
           </div>
         </div>

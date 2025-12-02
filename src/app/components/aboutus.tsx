@@ -12,7 +12,7 @@ export default function AboutUs() {
           ABOUT US
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed">
-          Repointing Brickwork is owned and run by Doddy with over 25 years of experience.
+          Repointing Brickwork is owned and run by Richard Dodd with over 25 years of experience.
           <br />
           We provide professional brickwork services with a real focus on customer satisfaction.
         </p>
