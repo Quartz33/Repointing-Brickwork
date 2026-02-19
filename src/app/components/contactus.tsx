@@ -62,7 +62,7 @@ export default function ContactUs() {
           </form>
 
           <div className="mt-6">
-            <img src="/rb-logo.png" alt="RB Repointing Brickwork" className="h-12" />
+            <img src="/logo.jpeg" alt="Repointing Brickwork" className="h-12" />
           </div>
         </div>
 

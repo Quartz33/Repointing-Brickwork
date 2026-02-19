@@ -103,7 +103,7 @@ export default function ContactUs() {
 
         {/* Logo */}
         <div className="mt-8 text-center">
-          <img src="/rb-logo.png" alt="RB Repointing Brickwork" className="h-12 mx-auto" />
+          <img src="/logo.jpeg" alt="RB Repointing Brickwork" className="h-12 mx-auto" />
         </div>
       </div>
     </section>

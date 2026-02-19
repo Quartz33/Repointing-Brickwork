@@ -240,7 +240,7 @@ const ProjectsPage: React.FC = () => {
             Ready To Build Something That Lasts?
           </h2>
 
-          <a href="#contactus">
+          <a href="/#contactus">
             <button className="mt-8 text-white lg:text-2xl uppercase tracking-widest font-bold font-barlow bg-[#B72025] py-3 px-10 rounded-lg hover:bg-[#a51e20] transition-colors duration-300">
               GET A QUOTE
             </button>
