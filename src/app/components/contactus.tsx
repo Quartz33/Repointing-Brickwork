@@ -43,10 +43,11 @@ export default function ContactUs() {
 
   return (
     <section id='contactus'>
-      <div className="min-h-screen bg-white flex flex-col md:flex-row text-black">
+      {/* Centered the container now that the map is gone */}
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center text-black py-12 px-4">
         
-        {/* Left Side - Form Area */}
-        <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+        {/* Adjusted width to max-w-3xl so it looks great centered */}
+        <div className="w-full max-w-3xl p-8 md:p-12 flex flex-col justify-center">
           
           {result === "success" ? (
             /* --- SUCCESS STATE UI --- */
@@ -66,34 +67,39 @@ export default function ContactUs() {
           ) : (
             /* --- FORM UI --- */
             <div className="animate-in fade-in duration-500">
-              <h2 className="text-4xl font-bold mb-4">
-                Get in <span className="text-red-600">Touch</span>
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Have a project in mind or need expert advice? Fill out the form below and we’ll get back to you as soon as possible.
-              </p>
+              <div className="text-center mb-10">
+                <h2 className="text-4xl font-bold mb-4">
+                  Get in <span className="text-red-600">Touch</span>
+                </h2>
+                <p className="text-gray-700 max-w-2xl mx-auto">
+                  Have a project in mind or need expert advice? Fill out the form below and we’ll get back to you as soon as possible.
+                </p>
+              </div>
 
               {result === "error" && (
                 <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 flex items-center gap-3">
-                  <AlertCircle className="w-5 h-5" />
+                  <AlertCircle className="w-5 h-5 flex-shrink-0" />
                   <p>Something went wrong sending your message. Please try again.</p>
                 </div>
               )}
 
               <form onSubmit={submitForm} className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Name *"
-                  className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Name *"
+                    className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                  />
+                </div>
+                
                 <input
                   type="tel"
                   name="phone"
@@ -101,24 +107,35 @@ export default function ContactUs() {
                   placeholder="Phone number *"
                   className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
-                <select name="source" className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
-                  <option value="">How did you find us?</option>
-                  <option value="Google">Google</option>
-                  <option value="Facebook">Facebook</option>
-                  <option value="Recommendation">Recommendation</option>
-                </select>
-                <select name="service" className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
-                  <option value="">What service do you require?</option>
-                  <option value="Repointing">Repointing</option>
-                  <option value="Lintel Replacement">Lintel Replacement</option>
-                  <option value="Extensions">Extensions</option>
-                  <option value="Groundwork">Groundwork</option>
-                </select>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <select name="source" className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                    <option value="">How did you find us?</option>
+                    <option value="Google">Google</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Recommendation">Recommendation</option>
+                  </select>
+                  <select name="service" className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                    <option value="">What service do you require?</option>
+                    <option value="Repointing">Repointing</option>
+                    <option value="Lintel Replacement">Lintel Replacement</option>
+                    <option value="Extensions">Extensions</option>
+                    <option value="Groundwork">Groundwork</option>
+                  </select>
+                </div>
+
+                {/* ADDED: Message Field */}
+                <textarea
+                  name="message"
+                  rows={4}
+                  placeholder="Your message..."
+                  className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500 resize-y"
+                ></textarea>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#B72025] text-white font-semibold py-3.5 rounded hover:bg-[#a51e20] transition-colors disabled:opacity-70 flex items-center justify-center gap-2"
+                  className="w-full bg-[#B72025] text-white font-semibold py-4 rounded hover:bg-[#a51e20] transition-colors disabled:opacity-70 flex items-center justify-center gap-2 mt-4"
                 >
                   {isSubmitting ? (
                     <>
@@ -133,8 +150,8 @@ export default function ContactUs() {
             </div>
           )}
 
-          {/* Logo - Fixed Next.js Image Warning */}
-          <div className="mt-8">
+          {/* Logo */}
+          <div className="mt-12 flex justify-center">
             <Image 
               src="/logo.jpeg" 
               alt="Repointing Brickwork" 
@@ -145,16 +162,6 @@ export default function ContactUs() {
           </div>
         </div>
 
-        {/* Right Side - Map */}
-        <div className="w-full md:w-1/2 h-96 md:h-auto bg-gray-100">
-          <iframe
-            title="Location Map"
-            className="w-full h-full"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d161048.8778335359!2d-1.4286419736802492!3d50.6796939524673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487461230e588fbd%3A0xcfd64a4b27f272b2!2sIsle%20of%20Wight!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
       </div>
     </section>
   );

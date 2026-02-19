@@ -53,11 +53,8 @@ export default function Header() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/repointingbrickwork" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FacebookIcon className="w-5 h-5 hover:text-gray-200 transition" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <InstagramIcon className="w-5 h-5 hover:text-gray-200 transition" />
             </a>
           </div>
         </div>
