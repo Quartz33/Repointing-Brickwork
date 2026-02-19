@@ -1,16 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { MessagesSquare } from "lucide-react";
 import { Carousel, Card } from "./ui/apple-cards-carousel";
 
 /* -------------------------------------------------------------------------- */
-/*                            REUSABLE SERVICE CARD                           */
+/* TYPES                                    */
 /* -------------------------------------------------------------------------- */
 
-function ServiceInfoCard({ title, children }) {
+interface ServiceCardData {
+  category: string;
+  title: string;
+  description: string;
+  src: string;
+  content: ReactNode;
+}
+
+interface ServiceInfoCardProps {
+  title: string;
+  children: ReactNode;
+}
+
+/* -------------------------------------------------------------------------- */
+/* REUSABLE SERVICE CARD                           */
+/* -------------------------------------------------------------------------- */
+
+function ServiceInfoCard({ title, children }: ServiceInfoCardProps) {
   return (
     <section className="bg-main px-8 py-12 md:px-16 md:py-16 rounded-3xl max-w-5xl mx-auto mt-12 shadow-xl border border-gray-200">
       <h2 className="text-3xl md:text-4xl font-staatliches text-off-red text-center mb-6 tracking-wider drop-shadow-sm">
@@ -25,7 +41,7 @@ function ServiceInfoCard({ title, children }) {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                       INDIVIDUAL SERVICE CONTENT SECTIONS                  */
+/* INDIVIDUAL SERVICE CONTENT SECTIONS                    */
 /* -------------------------------------------------------------------------- */
 
 const RepointingInfo = () => (
@@ -103,66 +119,62 @@ const OtherServicesInfo = () => (
 );
 
 /* -------------------------------------------------------------------------- */
-/*                                SERVICES DATA                               */
+/* SERVICES DATA                               */
 /* -------------------------------------------------------------------------- */
 
-const data = [
+const data: ServiceCardData[] = [
   {
     category: "Repointing",
     title: "Brickwork Repointing",
-    description:
-      "Dust-controlled grinding, lime mortar specialists, and expert repointing for brick and stone properties.",
+    description: "Dust-controlled grinding, lime mortar specialists, and expert repointing for brick and stone properties.",
     src: "/repointing-service.jpg",
     content: <RepointingInfo />,
   },
   {
     category: "Lintel Replacement",
     title: "Professional Lintel Replacement",
-    description:
-      "Safe lintel replacement for structural stability. Fully insured and experienced with arches and crack repairs.",
+    description: "Safe lintel replacement for structural stability. Fully insured and experienced with arches and crack repairs.",
     src: "/lintel-replacement.jpg",
     content: <LintelReplacementInfo />,
   },
   {
     category: "Cavity Tray Installation",
     title: "Expert Cavity Tray Installation",
-    description:
-      "Prevent water ingress and damp with precision-installed cavity trays made from high-quality materials.",
+    description: "Prevent water ingress and damp with precision-installed cavity trays made from high-quality materials.",
     src: "/cavitywall-2.png",
     content: <CavityWorkInfo />,
   },
   {
     category: "Extensions",
     title: "Home Extensions",
-    description:
-      "Full-service external building including groundwork, drainage, and brickwork — backed by 25+ years of experience.",
+    description: "Full-service external building including groundwork, drainage, and brickwork — backed by 25+ years of experience.",
     src: "/Extension-service.jpg",
     content: <GroundWorkInfo />,
   },
   {
     category: "Stonework",
     title: "Skilled Stonework",
-    description:
-      "Beautiful, durable stonework crafted by experienced masons for decorative or structural projects.",
+    description: "Beautiful, durable stonework crafted by experienced masons for decorative or structural projects.",
     src: "/stonework-service.jpg",
     content: <StoneworkInfo />,
   },
   {
     category: "Other Services",
     title: "Additional Masonry Services",
-    description:
-      "Custom masonry, bricklaying, and repair services tailored to your project requirements.",
+    description: "Custom masonry, bricklaying, and repair services tailored to your project requirements.",
     src: "/img1.jpg",
     content: <OtherServicesInfo />,
   },
 ];
 
 /* -------------------------------------------------------------------------- */
-/*                                MAP SECTION                                 */
+/* MAP SECTION                                */
 /* -------------------------------------------------------------------------- */
 
 export function Map() {
-  const cards = data.map((card, index) => <Card key={index} card={card} index={index} />);
+  const cards = data.map((card, index) => (
+    <Card key={card.src} card={card} index={index} />
+  ));
 
   return (
     <div className="relative py-20">
@@ -187,7 +199,7 @@ export function Map() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                              MAIN EXPORT: SERVICES                         */
+/* MAIN EXPORT: SERVICES                           */
 /* -------------------------------------------------------------------------- */
 
 export default function Services() {
