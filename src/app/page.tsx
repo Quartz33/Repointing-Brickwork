@@ -5,6 +5,7 @@ import AboutsUs from "./components/aboutus"
 import Testimonials from "./components/testimonials"
 import ContactUs from "./components/contactus"
 import { Analytics } from "@vercel/analytics/next"
+import ProjectsPage from "./components/projectsPage"
 
 export default function Home() {
   return(
