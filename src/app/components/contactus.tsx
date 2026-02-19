@@ -1,15 +1,45 @@
 'use client';
 
 import { useState } from 'react';
+// import Image from 'next/image'; // Optional: Use this to fix your image warning!
 
 export default function ContactUs() {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    howDidYouFindUs: '',
-    serviceRequired: '',
-  });
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("Sending..."); // Give the user immediate feedback
+
+    // 1. Grab the form data
+    const formData = new FormData(event.currentTarget);
+
+    // 2. Append your Web3Forms access key
+    formData.append("access_key", "cd17011c-83ee-48df-9dab-81620301c068");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Message sent successfully! We'll be in touch soon.");
+        event.currentTarget.reset(); // Clear the form after success
+      } else {
+        setResult("Something went wrong. Please try again.");
+        console.error("Error from Web3Forms:", data.message);
+      }
+    } catch (error) {
+      setResult("Something went wrong. Please try again.");
+      console.error("Form Error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id='contactus'>
@@ -23,42 +53,61 @@ export default function ContactUs() {
             Have a project in mind or need expert advice? Fill out the form below and we’ll get back to you as soon as possible.
           </p>
 
-          <form className="space-y-4">
+          {/* ADDED: onSubmit handler */}
+          <form onSubmit={submitForm} className="space-y-4">
+            {/* ADDED: name="name" and required */}
             <input
               type="text"
+              name="name"
+              required
               placeholder="Name *"
               className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
             />
+            {/* ADDED: name="email" */}
             <input
               type="email"
+              name="email"
               placeholder="Email"
               className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
             />
+            {/* ADDED: name="phone" and required */}
             <input
               type="tel"
+              name="phone"
+              required
               placeholder="Phone number *"
               className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
             />
-            <select className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
-              <option>How did you find us?</option>
-              <option>Google</option>
-              <option>Facebook</option>
-              <option>Recommendation</option>
+            {/* ADDED: name="source" */}
+            <select name="source" className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+              <option value="">How did you find us?</option>
+              <option value="Google">Google</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Recommendation">Recommendation</option>
             </select>
-            <select className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
-              <option>What service do you require?</option>
-              <option>Repointing</option>
-              <option>Lintel Replacement</option>
-              <option>Extensions</option>
-              <option>Groundwork</option>
+            {/* ADDED: name="service" */}
+            <select name="service" className="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+              <option value="">What service do you require?</option>
+              <option value="Repointing">Repointing</option>
+              <option value="Lintel Replacement">Lintel Replacement</option>
+              <option value="Extensions">Extensions</option>
+              <option value="Groundwork">Groundwork</option>
             </select>
 
             <button
               type="submit"
-              className="w-full bg-off-red text-white font-semibold py-3 rounded hover:bg-red-50 transition-colors"
+              disabled={isSubmitting}
+              className="w-full bg-off-red text-white font-semibold py-3 rounded hover:bg-red-50 transition-colors disabled:opacity-50"
             >
-              SEND
+              {isSubmitting ? "SENDING..." : "SEND"}
             </button>
+
+            {/* ADDED: Status message display */}
+            {result && (
+              <p className={`text-center font-medium mt-4 ${result.includes("successfully") ? "text-green-600" : "text-red-600"}`}>
+                {result}
+              </p>
+            )}
           </form>
 
           <div className="mt-6">

@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image"; // ✅ ADDED: Next.js Image import
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 /* -------------------------------------------------------------------------- */
-/*                              TYPES & INTERFACES                            */
+/* TYPES & INTERFACES                            */
 /* -------------------------------------------------------------------------- */
 
 export type ProjectCategory = "residential" | "commercial" | "restoration";
@@ -26,10 +28,11 @@ export interface Project {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                 PROJECT DATA                               */
+/* PROJECT DATA                                */
 /* -------------------------------------------------------------------------- */
 
-export const projectsData: Project[] = [
+// 🚨 FIXED: Removed the 'export' keyword here! This was crashing the build.
+const projectsData: Project[] = [
   {
     id: 1,
     title: "The Oakwood Extension",
@@ -93,7 +96,7 @@ export const projectsData: Project[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*                               PROJECTS PAGE                                */
+/* PROJECTS PAGE                                */
 /* -------------------------------------------------------------------------- */
 
 type FilterType = ProjectCategory | "all";
@@ -185,12 +188,15 @@ const ProjectsPage: React.FC = () => {
               >
                 {/* IMAGE */}
                 <div className="relative">
-                  <span className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-xs tracking-widest uppercase">
+                  <span className="absolute top-4 left-4 z-10 bg-black/70 text-white px-3 py-1 rounded-full text-xs tracking-widest uppercase">
                     {project.category}
                   </span>
 
-                  <img
+                  {/* ✅ FIXED: Replaced <img> with Next.js <Image /> */}
+                  <Image
                     src={project.image}
+                    width={800}
+                    height={500}
                     className="w-full h-56 object-cover"
                     alt={project.title}
                   />
@@ -240,11 +246,11 @@ const ProjectsPage: React.FC = () => {
             Ready To Build Something That Lasts?
           </h2>
 
-          <a href="/#contactus">
+          <Link href="/#contactus">
             <button className="mt-8 text-white lg:text-2xl uppercase tracking-widest font-bold font-barlow bg-[#B72025] py-3 px-10 rounded-lg hover:bg-[#a51e20] transition-colors duration-300">
               GET A QUOTE
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
