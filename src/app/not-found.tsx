@@ -22,7 +22,7 @@ export default function NotFound() {
       </h2>
       
       <p className="font-inter text-base md:text-lg text-gray-600 max-w-md mx-auto mb-8 leading-relaxed">
-        The page you are looking for has been moved, deleted, or never existed in the first place. Let's get you back to solid ground.
+        The page you are looking for has been moved, deleted, or never existed in the first place.
       </p>
 
       {/* Call to Action */}
